@@ -19,7 +19,7 @@
 需要 Python 3.9 或更高版本。
 
 ```bash
-git clone https://github.com/<your-account>/write-wechat-articles.git
+git clone https://github.com/EasternWhale/write-wechat-articles.git
 cd write-wechat-articles
 python scripts/install.py
 ```
