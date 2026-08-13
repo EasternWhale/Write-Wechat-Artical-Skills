@@ -19,8 +19,8 @@
 需要 Python 3.9 或更高版本。
 
 ```bash
-git clone https://github.com/EasternWhale/write-wechat-articles.git
-cd write-wechat-articles
+git clone https://github.com/EasternWhale/Write-Wechat-Artical-Skills.git
+cd Write-Wechat-Artical-Skills
 python scripts/install.py
 ```
 
