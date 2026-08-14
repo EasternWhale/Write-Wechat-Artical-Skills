@@ -2,9 +2,7 @@
 
 一个面向主流 AI Agent 的全领域微信公众号写作与排版 Skill：从选题、研究、争议设计、事实核查和中文自然化，一直完成到微信兼容 HTML 与“一键复制到公众号”预览页。
 
-核心目录遵循 [Agent Skills 开放规范](https://agentskills.io/specification)，不绑定某个模型。排版能力内置于仓库，不需要另装 `gzh-design`。
-
-## 能做什么
+核心目录遵循 [Agent Skills 开放规范](https://agentskills.io/specification)，不绑定某个模型。排版能力内置于仓库。
 
 - 生成并评分公众号选题，输出标题、大纲、全文或系列策划；
 - 覆盖文学、影视、音乐、科技、商业、财经、职场、教育、健康、法律、历史、消费、旅行等领域；
