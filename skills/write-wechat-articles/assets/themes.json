@@ -1,0 +1,38 @@
+{
+  "moyu-green": {
+    "label": "墨玉绿",
+    "accent": "#176B55",
+    "accent_soft": "#EAF3EF",
+    "paper": "#FBF8F1",
+    "text": "#24332E",
+    "muted": "#66756F",
+    "border": "#BDD1C8",
+    "quote": "#F0F6F3",
+    "code": "#17211E",
+    "code_text": "#E8F3EE"
+  },
+  "red-white": {
+    "label": "红白锐评",
+    "accent": "#C9352B",
+    "accent_soft": "#FCEBE8",
+    "paper": "#FFFFFF",
+    "text": "#25211F",
+    "muted": "#756B67",
+    "border": "#E0B8B2",
+    "quote": "#FFF4F2",
+    "code": "#241D1C",
+    "code_text": "#FFF2EF"
+  },
+  "graphite-minimal": {
+    "label": "石墨极简",
+    "accent": "#3B556E",
+    "accent_soft": "#EAF0F5",
+    "paper": "#FFFFFF",
+    "text": "#252B31",
+    "muted": "#69737D",
+    "border": "#C8D0D8",
+    "quote": "#F4F6F8",
+    "code": "#1D2329",
+    "code_text": "#E9EEF3"
+  }
+}
