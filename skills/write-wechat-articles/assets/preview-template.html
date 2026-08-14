@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{TITLE}} · 公众号排版预览</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#eef1f3;color:#20262c;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}.toolbar{position:sticky;top:0;z-index:9;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 18px;background:rgba(255,255,255,.96);box-shadow:0 1px 12px rgba(0,0,0,.08)}.hint{font-size:13px;line-height:1.5;color:#66717c}.copy{border:0;border-radius:9px;padding:10px 18px;background:#176b55;color:#fff;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap}.copy:hover{background:#105443}.stage{max-width:720px;margin:28px auto 64px;padding:0 10px}.toast{position:fixed;left:50%;top:72px;z-index:10;transform:translateX(-50%);padding:10px 16px;border-radius:8px;background:#20262c;color:#fff;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s}.toast.show{opacity:1}@media(max-width:560px){.toolbar{align-items:flex-start}.hint{max-width:210px}.copy{padding:9px 12px}.stage{margin-top:16px}}
+  </style>
+</head>
+<body>
+  <header class="toolbar">
+    <span class="hint">下方是最终效果。点击右侧按钮，再到微信公众号编辑器粘贴。</span>
+    <button class="copy" id="copy-button" type="button">复制到公众号</button>
+  </header>
+  <div class="toast" id="toast" role="status"></div>
+  <main class="stage">
+    <div id="wechat-content"><!--WECHAT_CONTENT--></div>
+  </main>
+  <script>
+    const content=document.getElementById('wechat-content');
+    const button=document.getElementById('copy-button');
+    const toast=document.getElementById('toast');
+    function notify(message){toast.textContent=message;toast.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>toast.classList.remove('show'),2600)}
+    function fallbackCopy(){const range=document.createRange();range.selectNodeContents(content);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);let ok=false;try{ok=document.execCommand('copy')}catch(error){ok=false}selection.removeAllRanges();return ok}
+    async function copyArticle(){let ok=false;try{if(navigator.clipboard&&window.ClipboardItem){const html=new Blob([content.innerHTML],{type:'text/html'});const plain=new Blob([content.innerText],{type:'text/plain'});await navigator.clipboard.write([new ClipboardItem({'text/html':html,'text/plain':plain})]);ok=true}}catch(error){ok=false}if(!ok)ok=fallbackCopy();if(ok){notify('已复制。现在到公众号编辑器粘贴即可。');const old=button.textContent;button.textContent='已复制';setTimeout(()=>button.textContent=old,1800)}else{notify('自动复制失败，请选中正文后手动复制。')}}
+    button.addEventListener('click',copyArticle);
+  </script>
+</body>
+</html>

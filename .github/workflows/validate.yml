@@ -22,5 +22,8 @@ jobs:
       - name: Validate repository
         run: python scripts/validate.py
 
-      - name: Smoke-test installer
-        run: python scripts/install.py --target "${{ runner.temp }}/codex-home"
+      - name: Smoke-test renderer and preview
+        run: python tests/smoke_test.py
+
+      - name: Smoke-test portable installer
+        run: python scripts/install.py --target "${{ runner.temp }}/skills"
